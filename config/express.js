@@ -2,10 +2,14 @@ var express = require('express');
 module.exports = function() {
   var app = express();
 
-  app.set('views', './app/views');
-  app.set('view engine', 'ejs');
+  // Handlebars setup
+  var expressHandlebars = require('express-handlebars');
+  app.engine('handlebars', expressHandlebars({
+    defaultLayout: 'main'
+  }));
+  app.set('view engine', 'handlebars');
 
-  require('../app/routes/index.server.routes.js')(app);
+  require('../routes/index.server.routes.js')(app);
 
   app.use(express.static('./public'));
 

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/MrMendonez/hackhands-node-express-tutorial#readme",
   "dependencies": {
     "ejs": "^2.4.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0"
   }
 }
